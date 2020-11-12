@@ -1,0 +1,30 @@
+
+<div class="user-sidebar">
+
+</div>
+
+<div class="content">
+  <div id="search-banner">
+    <h1> Searched for "<%= params[:search] %>" </h1>
+
+  </div>
+  <div id="results">
+    <% @songs.each do |song, attributes| %>
+      <img src=<%= attributes[:album_picture] %> alt="album picture"><br>
+      <img src=<%= attributes[:artist_picture] %> alt="artist picture">
+      <audio controls>
+        <source src=<%= attributes[:preview] %>>
+        Your browser does not support the audio element.
+      </audio>
+      <br>
+      <ul>
+        <li><h2>Name: <%= attributes[:song_name] %></h2></li>
+        <li><h3>Artist: <%= attributes[:artist_name] %></h3></li>
+        <li><h3>Album Name: <%= attributes[:album] %> </h3></li>
+        <li><h3>BPM: <%= attributes[:bpm] %></h3></li>
+      </ul>
+      <br><br>
+    <% end %>
+
+  </div>
+</div>

@@ -1,0 +1,12 @@
+
+<div class="banner">
+  <h1> Search for songs </h1>
+</div>
+
+<div class="content">
+  <%= form_tag(songs_path, method: :get) do |f| %>
+    <label>Search For Song: </label>
+    <%= text_field_tag "search" %><br>
+    <%= submit_tag "Search" %>
+  <% end %>
+</div>

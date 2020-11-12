@@ -24,6 +24,7 @@ gem 'net-http', '~> 0.1.0'
 
 gem 'openssl'
 
+gem 'bcrypt'
 
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'

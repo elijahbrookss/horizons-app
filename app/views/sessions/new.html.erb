@@ -1,0 +1,30 @@
+<div class="banner">
+  <h1> Login </h1>
+</div>
+
+
+<div class="content">
+  <%= form_with url: sessions_path do |form| %>
+    <label>Username:</label>
+    <%= form.text_field :username, placeholder: "Username"%>
+    <br>
+    <label>Password: </label>
+    <%= form.password_field :password, placeholder: "Password"%>
+    <br>
+    <%= form.submit "Login" %>
+  <% end %>
+  <br>
+
+  <% if flash[:errors] %>
+
+    <div class="errors" style="color:red">
+      <% flash[:errors].each do |i, v| %>
+        <li> <%= "#{i}" %> </li>
+      <% end %>
+    </div>
+
+    <br>
+  <% end %>
+
+  <%= link_to "New User? Sign Up", new_user_path %>
+</div>

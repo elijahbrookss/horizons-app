@@ -1,8 +1,9 @@
 class Api < ActiveRecord::Base
 
-  def self.search(params)
+  def self.search(params="A")
     url = URI("https://deezerdevs-deezer.p.rapidapi.com/search?q=#{params}")
     results = self.get_search_results(self.setup(url))
+    
     results
   end
 
@@ -11,9 +12,11 @@ class Api < ActiveRecord::Base
   def self.get_search_results(parsed_data)
     results = {}
     parsed_data["data"].each do |song|
-      results[song["title"]] = {
+      results[song["id"]] = {
+        song_name: song["title"],
         preview: song["preview"],
         artist_name: song["artist"]["name"],
+        album_picture: song["album"]["cover_big"],
         artist_picture: song["artist"]["picture"],
         album: song["album"]["title"],
         bpm: get_bpm(song["id"])

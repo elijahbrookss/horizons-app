@@ -1,0 +1,16 @@
+
+<div class="banner">
+  <h1> <%= @user.username %>'s profile </h1>
+</div>
+
+<div class="user-sidebar">
+
+</div>
+
+<div class="content">
+  <% if @is_current_user then %>
+    <%= render 'user_profile' %>
+  <% else %>
+    <%= render 'profile' %>
+  <% end %>
+</div>

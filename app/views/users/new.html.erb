@@ -1,0 +1,38 @@
+<div class="banner">
+  <h1> Welcome to Horizons </h1>
+  <h2> "Explore different music options and expand your horizons!" - Ricardo </h2>
+</div>
+<br>
+<br>
+<div class="content">
+  <%= form_for @user do |form| %>
+    <label>Username:</label>
+    <%= form.text_field :username, placeholder: "Username"%>
+    <br>
+    <label>Password: </label>
+    <%= form.password_field :password, placeholder: "Password"%>
+    <br>
+    <label>Confirm Password: </label>
+    <%= form.password_field :password_confirmation, placeholder: "Confirm Password" %>
+    <br>
+    <%= form.submit "Create Account" %>
+  <% end %>
+
+  <% if flash[:error] %>
+
+    <div class="errors" style="color:red">
+      <% flash[:error].each do |i, v| %>
+        <li> <%= "#{i}" %> </li>
+      <% end %>
+    </div>
+
+    <br><br>
+  <% end %>
+
+  <%= link_to "Already have an account? Login", login_path %>
+</div>
+<br>
+
+<div class="footer">
+  <h2> Credits: Ricardo and Elijah </h2>
+</div>

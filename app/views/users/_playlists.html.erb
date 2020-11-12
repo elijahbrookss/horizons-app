@@ -1,0 +1,7 @@
+
+<ul>
+  <% @playlists.each do |playlist| %>
+    <%# Link to the show page of a playlist %>
+    <li><%= link_to playlist.name %></li>
+  <% end %>
+</ul>

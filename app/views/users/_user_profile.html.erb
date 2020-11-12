@@ -1,0 +1,9 @@
+<h2>Your Playlists</h2>
+
+<% if @playlists.length > 0 %>
+  <%= render 'playlists' %>
+<% else %>
+  <h3><li>You don't have any playlists let's create one.</li></h3>
+<% end %>
+<br>
+<%= button_to("Create New Playlist", new_playlist_path, method: :get) %>
