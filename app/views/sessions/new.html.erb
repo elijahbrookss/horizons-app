@@ -1,9 +1,6 @@
 <div class="banner">
-  <h1> Login </h1>
-</div>
-
-
-<div class="content">
+  <h1 id="banner_header"> Login </h1>
+<div id="spaceforty">
   <%= form_with url: sessions_path do |form| %>
     <label>Username:</label>
     <%= form.text_field :username, placeholder: "Username"%>
@@ -27,4 +24,7 @@
   <% end %>
 
   <%= link_to "New User? Sign Up", new_user_path %>
+  </div>
+  <br><br>
+
 </div>

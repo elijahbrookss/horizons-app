@@ -1,5 +1,6 @@
 <div class="banner">
-  <h1> <%= @playlist.name %> </h1>
+  <h1 id="banner_header"> <%= @playlist.name %> </h1>
+  <div id="spaceforty">
   <% if @is_current_user then %>
     <%= form_with url: destroy_playlist_path(@playlist), method: :delete do |f| %>
       <%= f.submit "Delete Playlist" %>
@@ -9,11 +10,9 @@
       <%= f.submit "Change Name" %>
     <% end %>
   <% end %>
-</div>
-
-<br>
-
-<div class="content">
+  <br><br>
+  </div>
+<div id="spacehund">
   <% @playlist.songs.each do |song| %>
 
     <img src=<%= song.album_picture %> alt="album picture"><br>
@@ -40,4 +39,5 @@
 
     <br><br>
   <% end %>
+  </div>
 </div>

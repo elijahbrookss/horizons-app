@@ -76,7 +76,7 @@ div#form {
 
 h1#banner_header {
     margin-left: 40px;
-    margin-top: 40px;
+    margin-top: 0px;
 }
 
 h2#creds {
@@ -105,7 +105,7 @@ div#spaceforty {
 }
 
 div.user-sidebar {
-    background-color: blue;
+    background-color: rgb(0, 0, 0);
 }
 
 
@@ -132,4 +132,8 @@ img#logo {
     width: 678px;
     margin-top: -65px;
     border-color: blanchedalmond ;
+}
+
+div#spacehund {
+    padding-left: 100px;
 }
