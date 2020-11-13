@@ -1,5 +1,5 @@
 class PlaylistsController < ApplicationController
-  before_action :authorized, only: [:create]
+  before_action :authorized
 
   def new
     @playlist = Playlist.new
@@ -17,6 +17,16 @@ class PlaylistsController < ApplicationController
   end
 
   def show
+    @playlist = Playlist.find(params[:id])
+
+  end
+
+  def destroy
+    @playlist = Playlist.find(params[:id])
+    PlaylistSong.destroy_by(playlist_id: @playlist.id)
+    @playlist.destroy
+
+    redirect_to user_path(current_user)
   end
 
   private

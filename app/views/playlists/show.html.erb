@@ -1,0 +1,38 @@
+<div class="banner">
+  <h1> <%= @playlist.name %> </h1>
+
+  <%= form_with url: destroy_playlist_path(@playlist), method: :delete do |f| %>
+    <%= f.submit "Delete Playlist" %>
+  <% end %>
+
+  <%= button_to("Edit Playlist Name") %>
+</div>
+
+<br>
+
+<div class="content">
+  <% @playlist.songs.each do |song| %>
+
+    <img src=<%= song.album_picture %> alt="album picture"><br>
+    <img src=<%= song.artist_picture %> alt="artist picture">
+    <audio controls>
+      <source src=<%= song.preview %>>
+      Your browser does not support the audio element.
+    </audio>
+    <br>
+    <ul>
+      <li><h2>Name: <%= song.name %></h2></li>
+      <li><h3>Artist: <%= song.artist.name %></h3></li>
+      <li><h3>Album Name: <%= song.album%> </h3></li>
+      <li><h3>BPM: <%= song.bpm %></h3></li>
+    </ul>
+    <br><br>
+
+    <%= form_with url: destroy_song_path(song), method: :delete do |f| %>
+      <%= f.hidden_field :playlist_id, value: @playlist.id %>
+      <%= f.submit "Remove From Playlist" %>
+    <% end %>
+
+    <br><br>
+  <% end %>
+</div>

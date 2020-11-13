@@ -3,7 +3,7 @@ class Api < ActiveRecord::Base
   def self.search(params="A")
     url = URI("https://deezerdevs-deezer.p.rapidapi.com/search?q=#{params}")
     results = self.get_search_results(self.setup(url))
-    
+
     results
   end
 
