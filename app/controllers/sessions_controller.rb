@@ -1,5 +1,5 @@
 class SessionsController < ApplicationController
-
+  before_action :reroute, only: [:new, :create]
   def new
   end
 
@@ -19,6 +19,13 @@ class SessionsController < ApplicationController
     redirect_to login_path
   end
 
+  private
+
+  def reroute
+    if current_user then
+      redirect_to '/'
+    end
+  end
 
 
 end
