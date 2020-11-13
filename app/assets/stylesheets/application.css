@@ -46,7 +46,8 @@ div#banner {
 }
 
 div#results {
-    padding-left: 60px;
+    margin-left: auto;
+    margin-right: auto;
     width: 500px;
 }
 
@@ -103,4 +104,11 @@ div#spaceforty {
 
 div.user-sidebar {
     background-color: blue;
+}
+
+div#results_full {
+    width: 1000px;
+    margin-left: auto;
+    margin-right: auto;
+    
 }
