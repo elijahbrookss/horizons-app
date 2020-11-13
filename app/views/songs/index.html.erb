@@ -3,15 +3,16 @@
 
 </div>
 
-<div class="content">
-  <div id="search-banner">
-    <h1> Searched for "<%= params[:search] %>" </h1>
+<div id="content">
+  <div>
+    <h1 id="banner_header"> Searched for "<%= params[:search] %>" </h1>
 
   </div>
   <div id="results">
     <% @songs.each do |song, attributes| %>
-      <img src=<%= attributes[:album_picture] %> alt="album picture"><br>
+      <img src=<%= attributes[:album_picture] %> alt="album picture">
       <img src=<%= attributes[:artist_picture] %> alt="artist picture">
+      <br>
       <audio controls>
         <source src=<%= attributes[:preview] %>>
         Your browser does not support the audio element.

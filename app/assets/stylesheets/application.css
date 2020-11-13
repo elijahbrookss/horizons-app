@@ -1,3 +1,103 @@
-/* Hey */
-/* YOYOYo */
-/* Im a goat */
+
+
+@font-face {
+    font-family: 'LEMONMILK-Light';
+    src: url("LEMONMILK-Light.otf") format("opentype");
+ }
+ @font-face {
+ font-family: 'LEMONMILK-Regular';
+ src: url("LEMONMILK-Regular.otf") format("opentype");
+ }
+
+ @font-face {
+    font-family: 'LEMONMILK-Bold';
+    src: url("LEMONMILK-Bold.otf") format("opentype");
+ }
+
+
+
+
+body {
+    text-align: left;
+    background-image: url("horizons_logo_offwhite.png");
+    background-color: black;
+    color: blanchedalmond;
+    background-position: center;
+}
+
+div {
+    background-color: black;
+}
+
+h1 {
+    font-family: "LEMONMILK-Regular";
+    letter-spacing: 8px;
+}
+
+label {
+    font-family: "LEMONMILK-Light";
+    letter-spacing: 4px;
+} 
+
+div#banner {
+    margin-top: 0px;
+    margin-left: 0px;
+    margin-right: 0px;
+}
+
+div#results {
+    padding-left: 60px;
+    width: 500px;
+}
+
+ img {
+     width: 150px;
+     height: 150px;
+ }
+
+ h2 {
+    font-family: "LEMONMILK-Light";
+    font-size: 12px;
+    letter-spacing: 4px;
+ }
+
+ h3 {
+    font-family: "LEMONMILK-Light";
+    font-size: 10px;
+    letter-spacing: 2px;
+    color: rgb(92, 92, 92) ;
+ }
+
+div#form {
+    margin-left: 60px;
+}
+
+h1#banner_header {
+    margin-left: 40px;
+}
+
+h2#creds {
+    padding-left: 1000px;
+}
+
+h3#banner_header {
+    margin-left: 60px;
+}
+
+h1#search_banner {
+    margin-left: 60px;  
+}
+
+div#content {
+    width: 800px;
+    margin-left: 0px;
+}
+
+div#search_banner {
+    margin-left: 40px;
+}
+
+div#spaceforty {
+    padding-left: 60px;
+}
+

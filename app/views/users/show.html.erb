@@ -1,13 +1,12 @@
 
 <div class="banner">
-  <h1> <%= @user.username %>'s profile </h1>
-</div>
+  <h1 id="banner_header"> <%= @user.username %>'s profile </h1>
 
-<div class="user-sidebar">
 
-</div>
+  <div class="user-sidebar">
 
-<div class="content">
+  </div>
+
   <% if @is_current_user then %>
     <%= render 'user_profile' %>
   <% else %>
