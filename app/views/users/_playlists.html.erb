@@ -1,7 +1,6 @@
 
 <ul>
   <% @playlists.each do |playlist| %>
-    <%# Link to the show page of a playlist %>
-    <li><%= link_to playlist.name %></li>
+    <li><%= link_to playlist.name, playlist_path(playlist) %></li>
   <% end %>
 </ul>

@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-    
+
   def new
     @user = User.new
   end
@@ -9,7 +9,8 @@ class UsersController < ApplicationController
     if @user.valid? && @user.passwords_match(params[:password], params[:password_confirmation])
       @user.save
       session[:user_id] = @user.id
-      redirect_to '/'
+      redirect_to user_path(@user)
+
     else
       flash[:error] = @user.errors.full_messages
       redirect_to new_user_path
@@ -17,9 +18,9 @@ class UsersController < ApplicationController
   end
 
   def show
-    @user = User.find(params[:id])
-    @playlists = @user.playlists
-    @is_current_user = current_user?(@user)
+    @user1 = User.find(params[:id])
+    @playlists = @user1.playlists
+    @is_current_user = current_user?(@user1)
   end
 
   private
