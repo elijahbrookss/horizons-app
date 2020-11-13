@@ -12,6 +12,14 @@
 
   <body>
 
+    <% if session[:user_id] %>
+      <div class="user-sidebar">
+        <%= link_to "Profile", user_path(session[:user_id]) %>
+        <%= link_to "Search For Songs", '/' %>
+        <%= link_to "Logout", logout_path %>
+      </div>
+    <% end %>
+
     <%= yield %>
   </body>
 </html>

@@ -18,6 +18,8 @@ class PlaylistsController < ApplicationController
   end
 
   def show
+    @is_current_user = @playlist.user_id == current_user.id
+    @current_user = current_user
   end
 
   def edit

@@ -10,7 +10,6 @@ class UsersController < ApplicationController
       @user.save
       session[:user_id] = @user.id
       redirect_to user_path(@user)
-
     else
       flash[:error] = @user.errors.full_messages
       redirect_to new_user_path
@@ -30,7 +29,9 @@ class UsersController < ApplicationController
   end
 
   def current_user?(user)
-    user == current_user
+    bool = user == current_user
+    @user = user
+    bool
   end
 
 end
