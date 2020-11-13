@@ -5,7 +5,9 @@
     <%= f.submit "Delete Playlist" %>
   <% end %>
 
-  <%= button_to("Edit Playlist Name") %>
+  <%= form_with url: edit_playlist_path(@playlist), method: :get do |f| %>
+    <%= f.submit "Change Name" %>
+  <% end %>
 </div>
 
 <br>
