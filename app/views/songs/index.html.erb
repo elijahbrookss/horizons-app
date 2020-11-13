@@ -24,7 +24,17 @@
         <li><h3>Album Name: <%= attributes[:album] %> </h3></li>
         <li><h3>BPM: <%= attributes[:bpm] %></h3></li>
       </ul>
-      <br><br>
+      <br>
+
+      <% if @playlists.length > 0 then %>
+        <%= form_with url: add_playlist_path do |f| %>
+          <%= f.submit "Add Song To Playlist" %>
+          <%= f.hidden_field :song, value: attributes %>
+          <%= f.collection_select :playlist_id, @playlists, :id, :name, prompt: :true %>
+        <% end %>
+      <% end %>
+
+      <br>
     <% end %>
 
   </div>
