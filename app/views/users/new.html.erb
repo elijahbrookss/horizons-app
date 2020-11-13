@@ -1,20 +1,19 @@
 <div class="banner">
-  <h1> Welcome to Horizons </h1>
-  <h2> "Explore different music options and expand your horizons!" - Ricardo </h2>
-</div>
+  <h1 id="banner_header"> Welcome to Horizons </h1>
+  <h3 id="banner_header"> "Explore different music options and expand your horizons!" - Ricardo </h3>
 <br>
 <br>
-<div class="content">
+<div id="form">
   <%= form_for @user do |form| %>
     <label>Username:</label>
     <%= form.text_field :username, placeholder: "Username"%>
-    <br>
+    <br><br>
     <label>Password: </label>
     <%= form.password_field :password, placeholder: "Password"%>
-    <br>
+    <br><br>
     <label>Confirm Password: </label>
     <%= form.password_field :password_confirmation, placeholder: "Confirm Password" %>
-    <br>
+    <br><br>
     <%= form.submit "Create Account" %>
   <% end %>
 
@@ -24,15 +23,15 @@
       <% flash[:error].each do |i, v| %>
         <li> <%= "#{i}" %> </li>
       <% end %>
+      </div>
     </div>
 
     <br><br>
   <% end %>
-
+  <br><br>
   <%= link_to "Already have an account? Login", login_path %>
-</div>
-<br>
 
-<div class="footer">
-  <h2> Credits: Ricardo and Elijah </h2>
+<br><br><br>
+  <h2 id="creds"> Credits: Ricardo and Elijah </h2>
+  <br><br>
 </div>
