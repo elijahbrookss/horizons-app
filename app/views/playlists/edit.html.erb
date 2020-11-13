@@ -1,0 +1,13 @@
+<div>
+  <h1> <%= @playlist.name %> </h1>
+
+  <div id="spaceforty">
+  <%= form_for @playlist do |form| %>
+    <label>Name: </label>
+    <%= form.text_field :name %>
+    <br>
+    <%= form.submit "Update Playlist"%>
+  <% end %>
+  </div>
+
+</div>

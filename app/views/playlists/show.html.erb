@@ -1,11 +1,14 @@
 <div class="banner">
   <h1> <%= @playlist.name %> </h1>
+  <% if @is_current_user then %>
+    <%= form_with url: destroy_playlist_path(@playlist), method: :delete do |f| %>
+      <%= f.submit "Delete Playlist" %>
+    <% end %>
 
-  <%= form_with url: destroy_playlist_path(@playlist), method: :delete do |f| %>
-    <%= f.submit "Delete Playlist" %>
+    <%= form_with url: edit_playlist_path(@playlist), method: :get do |f| %>
+      <%= f.submit "Change Name" %>
+    <% end %>
   <% end %>
-
-  <%= button_to("Edit Playlist Name") %>
 </div>
 
 <br>
@@ -28,9 +31,11 @@
     </ul>
     <br><br>
 
-    <%= form_with url: destroy_song_path(song), method: :delete do |f| %>
-      <%= f.hidden_field :playlist_id, value: @playlist.id %>
-      <%= f.submit "Remove From Playlist" %>
+    <% if @is_current_user then %>
+      <%= form_with url: destroy_song_path(song), method: :delete do |f| %>
+        <%= f.hidden_field :playlist_id, value: @playlist.id %>
+        <%= f.submit "Remove From Playlist" %>
+      <% end %>
     <% end %>
 
     <br><br>

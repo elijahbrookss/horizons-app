@@ -9,6 +9,7 @@ Rails.application.routes.draw do
   delete '/songs/:id', to: "songs#destroy", as: "destroy_song"
   delete '/playlists/:id', to: "playlists#destroy", as: "destroy_playlist"
 
+  get '/logout', to: "sessions#logout"
   get '/', to: "application#search"
   get '/login', to: "sessions#new"
 end

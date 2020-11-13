@@ -1,5 +1,6 @@
 class PlaylistsController < ApplicationController
   before_action :authorized
+  before_action :find_playlist, only: [:show, :edit, :update, :destroy]
 
   def new
     @playlist = Playlist.new
@@ -17,12 +18,19 @@ class PlaylistsController < ApplicationController
   end
 
   def show
-    @playlist = Playlist.find(params[:id])
+    @is_current_user = @playlist.user_id == current_user.id
+    @current_user = current_user
+  end
 
+  def edit
+  end
+
+  def update
+    @playlist.update(playlist_params)
+    redirect_to playlist_path(@playlist)
   end
 
   def destroy
-    @playlist = Playlist.find(params[:id])
     PlaylistSong.destroy_by(playlist_id: @playlist.id)
     @playlist.destroy
 
@@ -30,6 +38,10 @@ class PlaylistsController < ApplicationController
   end
 
   private
+
+  def find_playlist
+    @playlist = Playlist.find(params[:id])
+  end
 
   def playlist_params
     params.require(:playlist).permit(:name)
