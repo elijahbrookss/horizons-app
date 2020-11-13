@@ -101,3 +101,6 @@ div#spaceforty {
     padding-left: 60px;
 }
 
+div.user-sidebar {
+    background-color: blue;
+}
