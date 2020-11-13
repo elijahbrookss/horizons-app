@@ -1,4 +1,5 @@
 class UsersController < ApplicationController
+  before_action :reroute, only: [:new, :create]
 
   def new
     @user = User.new
@@ -33,5 +34,12 @@ class UsersController < ApplicationController
     @user = user
     bool
   end
+
+  def reroute
+    if current_user then
+      redirect_to '/'
+    end
+  end
+
 
 end
