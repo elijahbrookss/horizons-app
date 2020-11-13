@@ -20,13 +20,14 @@
 body {
     text-align: left;
     background-image: url("horizons_logo_offwhite.png");
-    background-color: black;
+    background-color: rgb(10, 10, 10);
     color: blanchedalmond;
-    background-position: center;
+    background-repeat: unset;
 }
 
 div {
     background-color: black;
+    border-radius: 25px;
 }
 
 h1 {
@@ -75,6 +76,7 @@ div#form {
 
 h1#banner_header {
     margin-left: 40px;
+    margin-top: 40px;
 }
 
 h2#creds {
@@ -110,5 +112,23 @@ div#results_full {
     width: 1000px;
     margin-left: auto;
     margin-right: auto;
-    
+
+}
+
+div#spacer {
+    width: 20px;
+    height: 20px;
+}
+
+div#welcome_banner {
+    background-repeat: no-repeat;
+    background-position-x: 800px;
+}
+
+img#logo {
+    background-image: url("horizons_logo_offwhite.png");
+    border-radius: 30px;
+    width: 678px;
+    margin-top: -65px;
+    border-color: blanchedalmond ;
 }
