@@ -3,7 +3,7 @@
 
   <h1 id="banner_header"> <%= @user.username %>'s profile </h1>
 
-</div>
+
 
 
 
@@ -11,9 +11,12 @@
 
   </div>
 
+  <div id="spaceforty">
+
   <% if @is_current_user then %>
     <%= render 'user_profile' %>
   <% else %>
     <%= render 'profile' %>
   <% end %>
+  </div>
 </div>
